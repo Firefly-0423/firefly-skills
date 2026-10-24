@@ -1,0 +1,25 @@
+{
+  "name": "firefly-skills",
+  "owner": {
+    "name": "Firefly-0423",
+    "url": "https://github.com/Firefly-0423"
+  },
+  "metadata": {
+    "description": "Skills for Firefly, reviewed and kept as plain instructions and references.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "firefly-skills",
+      "description": "All Skills in this repository.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/diagram",
+        "./skills/document-reader-validation",
+        "./skills/knowledge-workspace",
+        "./skills/plugin-development"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+<p align="center"><b>简体中文</b> · <a href="#english">English</a></p>
+
+# Firefly Skills
+
+这是 [Firefly](https://github.com/Firefly-0423/Firefly-Agent) 的 Skills 仓库：教流萤做某类事情的说明与参考资料，以及校验它们的工具。Skill 只是文字和参考文件，不含可执行程序；它能用哪些工具、能不能写文件，始终由 Firefly 的权限与审批决定。
+
+## 目录格式
+
+| 内容 | 位置 |
+| --- | --- |
+| 目录 | `.claude-plugin/marketplace.json`（与 anthropics/skills 相同的格式） |
+| Skill | `skills/<id>/`：`SKILL.md`、`LICENSE`、`NOTICE.md`，可选 `references/` |
+
+`SKILL.md` 开头的 frontmatter：
+
+```yaml
+---
+name: trip-planner          # 与文件夹同名，小写字母、数字和连字符
+description: 什么时候用、什么时候不用（不超过 1024 字）
+version: 0.1.0              # SemVer
+modes: [work]               # 可选：chat / work / code，省略表示全部
+effectKind: read            # 可选：read / mutation / verification / external_side_effect
+---
+```
+
+## 现有 Skills
+
+| Skill | 用途 | 模式 |
+| --- | --- | --- |
+| `diagram` | 何时手写 SVG 学习卡片而非 Mermaid，配色、排版与渲染端校验 | Work、Code |
+| `document-reader-validation` | 文档面向明确读者时，核对读者能否据此理解事实或完成操作 | Work |
+| `knowledge-workspace` | 读写已绑定的 Obsidian 知识库时的分区、按标题取段与写入校验 | Work |
+| `plugin-development` | 为流萤编写或调试运行时插件：manifest、工具注册、面板、打包与验收 | Work、Code |
+
+## 写一个 Skill
+
+需要 Node.js 24。
+
+```bash
+npm ci
+npm run new-skill trip-planner   # 生成 skills/trip-planner/
+npm test                         # 校验全部 Skills
+npm run catalog                  # 更新 .claude-plugin/marketplace.json
+```
+
+投稿流程和审核标准见 [CONTRIBUTING.md](./CONTRIBUTING.md)。
+
+## 校验规则
+
+- `name` 与文件夹同名，描述非空且不超过 1024 字，版本号符合 SemVer，`modes` 与 `effectKind` 只能取 Firefly 认识的值。
+- 必须带 `LICENSE`；不允许符号链接、可执行文件或脚本（`.exe`、`.ps1`、`.bat` 等），单个文件不超过 512 KB，整个 Skill 不超过 4 MB。
+- CI 在 Windows 和 Linux 上运行校验，并核对目录文件与 `skills/` 一致。
+
+## 许可
+
+仓库工具采用 [MIT License](./LICENSE)，每个 Skill 以自己目录里的 `LICENSE` 为准，来源说明见 [NOTICE](./NOTICE)。流萤及《崩坏：星穹铁道》相关角色与知识产权归 HoYoverse / 米哈游所有，本项目为非官方、非商业的同人项目。
+
+---
+
+<a id="english"></a>
+
+# Firefly Skills
+
+The Skills repository for [Firefly](https://github.com/Firefly-0423/Firefly-Agent): instructions and references that teach Firefly a kind of task, plus the tooling that validates them. A Skill is text and reference files only, never executables; which tools it may use and whether it may write files is always decided by Firefly's permissions and approvals.
+
+**Layout.** The catalog is `.claude-plugin/marketplace.json` (the anthropics/skills format). Each Skill lives in `skills/<id>/` with `SKILL.md`, `LICENSE`, `NOTICE.md` and optional `references/`. Frontmatter: `name` (same as the folder), `description` (at most 1024 characters), `version` (SemVer), optional `modes` (`chat`, `work`, `code`) and `effectKind` (`read`, `mutation`, `verification`, `external_side_effect`).
+
+**Skills.** `diagram`, `document-reader-validation`, `knowledge-workspace` and `plugin-development`.
+
+**Develop.** With Node.js 24: `npm ci`, `npm run new-skill <id>`, `npm test`, `npm run catalog`. See [CONTRIBUTING.md](./CONTRIBUTING.md).
+
+**Rules.** A license is required; no symlinks, executables or scripts; files up to 512 KB and Skills up to 4 MB. CI validates on Windows and Linux and checks the catalog against `skills/`.
+
+**License.** Tooling is [MIT](./LICENSE); each Skill follows the `LICENSE` in its folder; see [NOTICE](./NOTICE). Firefly and Honkai: Star Rail IP belong to HoYoverse / miHoYo; this is an unofficial, non-commercial fan project.

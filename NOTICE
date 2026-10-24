@@ -1,0 +1,11 @@
+Firefly Skills
+Copyright (c) 2026 Firefly-0423
+
+The repository tooling (scripts, tests, workflows) is licensed under the MIT License in LICENSE.
+
+Each Skill under skills/<id>/ carries its own LICENSE and NOTICE.md, which govern that Skill.
+The Skills diagram, document-reader-validation, knowledge-workspace and plugin-development are
+maintained by Firefly-0423 under the MIT License.
+
+Firefly and Honkai: Star Rail characters and intellectual property belong to HoYoverse / miHoYo.
+This is an unofficial, non-commercial fan project.
