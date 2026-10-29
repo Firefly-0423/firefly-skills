@@ -29,8 +29,11 @@ effectKind: read            # 可选：read / mutation / verification / external
 | --- | --- | --- |
 | `diagram` | 何时手写 SVG 学习卡片而非 Mermaid，配色、排版与渲染端校验 | Work、Code |
 | `document-reader-validation` | 文档面向明确读者时，核对读者能否据此理解事实或完成操作 | Work |
+| `general-learning` | 通用学习、例题与错因反馈、文档题库和组卷，以及现有作答面板的适配 | Work |
 | `knowledge-workspace` | 读写已绑定的 Obsidian 知识库时的分区、按标题取段与写入校验 | Work |
 | `plugin-development` | 为流萤编写或调试运行时插件：manifest、工具注册、面板、打包与验收 | Work、Code |
+
+`general-learning` 可整理题库、试卷与带版本的作答记录。面板练习沿用当前宿主每批 1–3 题的单选、多选、判断和简答能力；填空可明确作为简答练习，不增加原生分空控件、按空自动判分或全卷续答接口。收录到本仓库不代表应用中已安装或启用。
 
 ## 写一个 Skill
 
@@ -65,7 +68,9 @@ The Skills repository for [Firefly](https://github.com/Firefly-0423/Firefly-Agen
 
 **Layout.** The catalog is `.claude-plugin/marketplace.json` (the anthropics/skills format). Each Skill lives in `skills/<id>/` with `SKILL.md`, `LICENSE`, `NOTICE.md` and optional `references/`. Frontmatter: `name` (same as the folder), `description` (at most 1024 characters), `version` (SemVer), optional `modes` (`chat`, `work`, `code`) and `effectKind` (`read`, `mutation`, `verification`, `external_side_effect`).
 
-**Skills.** `diagram`, `document-reader-validation`, `knowledge-workspace` and `plugin-development`.
+**Skills.** `diagram`, `document-reader-validation`, `general-learning`, `knowledge-workspace` and `plugin-development`.
+
+`general-learning` supports understanding, worked examples, practice feedback, document-based question banks, papers and versioned attempts. It adapts to the current host's 1–3-question batches and existing choice, multiple-choice, true/false and short-answer cards. Fill-in practice can use short-answer input; the Skill does not add native per-blank controls, automatic per-blank grading or whole-exam resume APIs. Repository inclusion does not install or enable it in the app.
 
 **Develop.** With Node.js 24: `npm ci`, `npm run new-skill <id>`, `npm test`, `npm run catalog`. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
