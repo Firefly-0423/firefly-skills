@@ -11,9 +11,9 @@
   "packageManager": "npm@11.17.0",
   "scripts": {
     "test": "node --test",
-    "catalog": "node scripts/catalog.mjs",
-    "check": "node scripts/catalog.mjs --check",
-    "new-skill": "node scripts/new-skill.mjs"
+    "catalog": "node tools/catalog.mjs",
+    "check": "node tools/catalog.mjs --check",
+    "new-skill": "node tools/new-skill.mjs"
   },
   "dependencies": {
     "yaml": "2.8.1"

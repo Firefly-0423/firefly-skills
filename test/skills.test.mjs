@@ -4,9 +4,9 @@ import os from "node:os";
 import path from "node:path";
 import { test } from "node:test";
 import { fileURLToPath } from "node:url";
-import { readSkill, readSkills } from "../scripts/skills.mjs";
-import { buildCatalog, CATALOG_PATH } from "../scripts/catalog.mjs";
-import { createSkill } from "../scripts/new-skill.mjs";
+import { readSkill, readSkills } from "../tools/skills.mjs";
+import { buildCatalog, CATALOG_PATH } from "../tools/catalog.mjs";
+import { createSkill } from "../tools/new-skill.mjs";
 
 const repoRoot = fileURLToPath(new URL("../", import.meta.url));
 
@@ -30,6 +30,16 @@ test("every Skill in the repository passes validation", async () => {
 test("the committed catalog matches skills/", async () => {
   const committed = (await fs.readFile(path.join(repoRoot, CATALOG_PATH), "utf8")).replace(/\r\n/g, "\n");
   assert.equal(committed, await buildCatalog(repoRoot));
+});
+
+// Firefly treats the catalog's package root ("./") as a plugin. These root
+// paths are plugin components there and block every Skill from installing.
+const PLUGIN_COMPONENT_PATHS = ["commands", "agents", "hooks", "bin", "scripts", "workflows", "output-styles", "themes", "monitors",
+  ".lsp.json", "settings.json", "CLAUDE.md", ".app.json", "mcp.json", ".mcp.json"];
+
+test("the repository root has no plugin component paths", async () => {
+  const present = (await fs.readdir(repoRoot)).filter(name => PLUGIN_COMPONENT_PATHS.includes(name));
+  assert.deepEqual(present, []);
 });
 
 test("a valid Skill reads back its id, version and modes", async () => {
