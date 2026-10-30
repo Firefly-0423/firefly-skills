@@ -18,6 +18,7 @@
         "./skills/ai-cs-research",
         "./skills/diagram",
         "./skills/document-reader-validation",
+        "./skills/general-learning",
         "./skills/knowledge-workspace",
         "./skills/plugin-development"
       ]
