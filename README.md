@@ -27,6 +27,7 @@ effectKind: read            # 可选：read / mutation / verification / external
 
 | Skill | 用途 | 模式 |
 | --- | --- | --- |
+| `ai-cs-research` | AI／计算机科研：论文与引用核验、文献比较、实验设计与复现，以及证据驱动写作 | Work、Code |
 | `diagram` | 何时手写 SVG 学习卡片而非 Mermaid，配色、排版与渲染端校验 | Work、Code |
 | `document-reader-validation` | 文档面向明确读者时，核对读者能否据此理解事实或完成操作 | Work |
 | `knowledge-workspace` | 读写已绑定的 Obsidian 知识库时的分区、按标题取段与写入校验 | Work |
@@ -65,7 +66,9 @@ The Skills repository for [Firefly](https://github.com/Firefly-0423/Firefly-Agen
 
 **Layout.** The catalog is `.claude-plugin/marketplace.json` (the anthropics/skills format). Each Skill lives in `skills/<id>/` with `SKILL.md`, `LICENSE`, `NOTICE.md` and optional `references/`. Frontmatter: `name` (same as the folder), `description` (at most 1024 characters), `version` (SemVer), optional `modes` (`chat`, `work`, `code`) and `effectKind` (`read`, `mutation`, `verification`, `external_side_effect`).
 
-**Skills.** `diagram`, `document-reader-validation`, `knowledge-workspace` and `plugin-development`.
+**Skills.** `ai-cs-research`, `diagram`, `document-reader-validation`, `knowledge-workspace` and `plugin-development`.
+
+`ai-cs-research` supports AI and computer science paper reading, literature and citation checks, experiment design and reproduction, and evidence-backed writing. Its references cover papers and evidence, experiments and evaluation (including LLM, RAG and Agent tasks), and writing and review. It uses the host's existing tools and permissions; adding it to this catalog does not install or enable it in the Firefly app.
 
 **Develop.** With Node.js 24: `npm ci`, `npm run new-skill <id>`, `npm test`, `npm run catalog`. See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
