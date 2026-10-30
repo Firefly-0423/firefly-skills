@@ -31,6 +31,7 @@ effectKind: read            # 可选：read / mutation / verification / external
 | `diagram` | 何时手写 SVG 学习卡片而非 Mermaid，配色、排版与渲染端校验 | Work、Code |
 | `document-reader-validation` | 文档面向明确读者时，核对读者能否据此理解事实或完成操作 | Work |
 | `general-learning` | 通用学习、例题与错因反馈、文档题库和组卷，以及现有作答面板的适配 | Work |
+| `jupyter-notebook` | 创建和编辑实验／教程 Notebook，检查结构、保留附件并说明实际执行状态 | Work、Code |
 | `knowledge-workspace` | 读写已绑定的 Obsidian 知识库时的分区、按标题取段与写入校验 | Work |
 | `plugin-development` | 为流萤编写或调试运行时插件：manifest、工具注册、面板、打包与验收 | Work、Code |
 
@@ -69,7 +70,9 @@ The Skills repository for [Firefly](https://github.com/Firefly-0423/Firefly-Agen
 
 **Layout.** The catalog is `.claude-plugin/marketplace.json` (the anthropics/skills format). Each Skill lives in `skills/<id>/` with `SKILL.md`, `LICENSE`, `NOTICE.md` and optional `references/`. Frontmatter: `name` (same as the folder), `description` (at most 1024 characters), `version` (SemVer), optional `modes` (`chat`, `work`, `code`) and `effectKind` (`read`, `mutation`, `verification`, `external_side_effect`).
 
-**Skills.** `ai-cs-research`, `diagram`, `document-reader-validation`, `general-learning`, `knowledge-workspace` and `plugin-development`.
+**Skills.** `ai-cs-research`, `diagram`, `document-reader-validation`, `general-learning`, `jupyter-notebook`, `knowledge-workspace` and `plugin-development`.
+
+`jupyter-notebook` adapts OpenAI's Apache-2.0 guidance for experiments and tutorials to Firefly's instruction-only format. It covers creating/editing .ipynb files, preserving existing cells and attachments, structure validation and honest execution reporting. It bundles no scripts, templates or kernels and does not install or enable an application editor.
 
 `ai-cs-research` supports AI and computer science paper reading, literature and citation checks, experiment design and reproduction, and evidence-backed writing. Its references cover papers and evidence, experiments and evaluation (including LLM, RAG and Agent tasks), and writing and review. It uses the host's existing tools and permissions; adding it to this catalog does not install or enable it in the Firefly app.
 

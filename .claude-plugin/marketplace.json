@@ -19,6 +19,7 @@
         "./skills/diagram",
         "./skills/document-reader-validation",
         "./skills/general-learning",
+        "./skills/jupyter-notebook",
         "./skills/knowledge-workspace",
         "./skills/plugin-development"
       ]
