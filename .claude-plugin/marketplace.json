@@ -15,6 +15,7 @@
       "source": "./",
       "strict": false,
       "skills": [
+        "./skills/ai-cs-research",
         "./skills/diagram",
         "./skills/document-reader-validation",
         "./skills/general-learning",

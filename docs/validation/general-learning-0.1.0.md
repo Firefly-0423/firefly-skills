@@ -4,7 +4,7 @@ Date: 2026-10-29 (Asia/Singapore).
 
 ## Scope and host contract
 
-This independent PR adds `general-learning` version 0.1.0 on the source repository's main commit `81e0bb6658705fdce08896186626243ba978367a`. It does not include or depend on the AI research Skill from the separate PR #1.
+This independent PR was originally authored for `general-learning` version 0.1.0 on the source repository's main commit `81e0bb6658705fdce08896186626243ba978367a`. On 2026-10-30 it incorporated main `fb9b706`, which had merged the AI research Skill from PR #1. The PR's change relative to current main still adds only general learning; the learning Skill does not depend on the AI research Skill.
 
 The six-file instruction-only Skill contains an entry, three references, LICENSE and NOTICE. It covers understanding, worked examples, practice feedback, document-based question banks and papers, versioned attempts, and learning artifacts. It does not add application UI, storage, exam services, native fill-in controls, per-blank automatic grading, autosave or whole-paper resume.
 
@@ -20,7 +20,7 @@ Host references were freshly inspected at Firefly-Agent origin/main `979b305f7eb
 
 - Node v24.19.0 / npm 11.17.0; `npm ci` from the existing lockfile, with no dependency changes.
 - Baseline and final `npm test`: 14 passed, 0 failed. The repository's production-Skill validation includes the addition.
-- `npm run catalog`, `npm run check` and `git diff --check`: passed; five production Skills on this independent branch.
+- `npm run catalog`, `npm run check` and `git diff --check`: passed; five production Skills at the original 2026-10-29 validation. Integration with main on 2026-10-30 validates six production Skills, preserving both additions in the generated catalog and README.
 - Direct readSkill: six files, Work mode, SemVer 0.1.0. Entry description and body fit the repository and host limits; each flat reference fits the 8000-character initial window, and the body fits 6000.
 - LICENSE matches the root MIT license. Entry reference names resolve. The JSON question example parses and its answer index selects the correct derivative value, 4; it was not executed through pop_quiz.
 
