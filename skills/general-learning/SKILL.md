@@ -21,7 +21,7 @@ effectKind: mutation
 | 整理题库、组卷、选择题／填空作答及面板适配 | `question-banks-and-papers.md` |
 | 笔记、作答记录、续学与复习安排 | `learning-artifacts.md` |
 
-通过宿主 `read_skill_reference` 按清单读取，ref 只填文件名，不带 references/。只读需要的部分，不重复加载所有参考。缺少某工具时说明实际情况，在可用范围用普通对话完成教学。
+通过宿主 `read_skill_reference` 按清单读取，ref 只填文件名，不带目录。只读需要的部分，不重复加载所有参考。缺少某工具时说明实际情况，在可用范围用普通对话完成教学。
 
 ## 材料与讲解
 
