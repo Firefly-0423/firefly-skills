@@ -1,7 +1,7 @@
 ---
 name: plugin-development
 description: 为流萤编写或调试运行时插件时使用：涵盖 manifest 与入口文件、AI 工具注册、设置面板与独立窗口、宿主事件与提示词 Provider、deps 声明的数据服务，以及 ZIP 打包导入与安装后验收。改动流萤本体源码，或只是使用已装插件时，不使用本 Skill。
-version: 1.4.2
+version: 1.4.3
 effectKind: mutation
 modes:
   - work
@@ -100,8 +100,8 @@ modes:
 
 ## 分发与收录现状
 
-- 插件市场的在线索引地址与下载前缀在代码中为空，因此只有随应用提供的离线目录可用。市场安装随附的 ZIP 时会校验 SHA-256、插件 id 与版本。其他插件请以用户提供的本地 ZIP 导入。
-- 仓库根目录没有 `CONTRIBUTING.md`。插件分发以用户提供的 ZIP 为准，不要引导用户向仓库提交插件以求收录。
+- Firefly 插件市场读取 `firefly-plugins` 仓库的在线目录；市场包来自该仓库的 Release，并按目录核对 SHA-256。插件默认停用，实际可用的版本以当前目录和 Release 为准。
+- 向插件市场投稿时，先阅读 `https://github.com/Firefly-0423/firefly-plugins` 中的 `CONTRIBUTING.md`，按其源码、构建和审核流程进行；自行分发也可提供本地 ZIP。
 - SDK 包名为 `@firefly_wu/plugin-sdk`，公开版本发布在 npm（`npm install @firefly_wu/plugin-sdk`）。尚未发布的改动用本仓库 `npm pack ./plugin-sdk` 构建的 tarball 安装。
 - 安装他人的插件时，只使用用户提供的、来源可信的 ZIP，并保留原作者署名与来源说明。
 
