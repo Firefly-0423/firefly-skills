@@ -8,9 +8,10 @@ Skill 只有文字和参考文件，不含可执行程序。它能用哪些工�
 
 ## 在 Firefly 里安装
 
-打开侧栏的 **技能** 面板，切到 **外部市场**，在 firefly-skills 来源里选择 Skill 安装。
+在 Firefly 1.2.0 的侧栏打开 **技能 → 外部市场**，选择 firefly-skills 来源。
 
-- 只有经过静态审查、锁定到某次提交、内容摘要一致的版本才能安装。
+- 与应用内置技能同名的项目显示为已内置，直接使用应用内的版本。
+- 外部技能选择宿主提供的已审查版本。审查锁定到具体提交和内容摘要，目录中的最新版本可能还未获得对应审查。
 - 装好后默认停用，由你决定在哪些模式里启用。
 - 收录到本仓库不代表应用里已经安装或启用。
 
@@ -24,7 +25,7 @@ Skill 只有文字和参考文件，不含可执行程序。它能用哪些工�
 | `general-learning` | 通用学习、例题与错因反馈、文档题库和组卷，以及现有作答面板的适配 | Work |
 | `jupyter-notebook` | 创建和编辑实验／教程 Notebook，检查结构、保留附件并说明实际执行状态 | Work、Code |
 | `knowledge-workspace` | 读写已绑定的 Obsidian 知识库时的分区、按标题取段与写入校验 | Work |
-| `plugin-development` | 为流萤编写或调试运行时插件：manifest、工具注册、面板、打包与验收 | Work、Code |
+| `plugin-development` | 为 Firefly 1.2.0 开发或迁移插件：新版 SDK、权限、.ffplugin 与验收 | Work、Code |
 
 ## 写一个 Skill
 
@@ -73,9 +74,10 @@ A Skill is text and reference files only, never executables. Which tools it may 
 
 ## Install in Firefly
 
-Open the **Skills** panel from the sidebar, switch to **External marketplace**, and install a Skill from the firefly-skills source.
+In Firefly 1.2.0, open **Skills → External marketplace** and select the firefly-skills source.
 
-- Only a statically reviewed version, pinned to a commit and matching its content digest, can be installed.
+- Entries with the same name as a built-in Skill use the built-in copy.
+- Choose a reviewed revision offered by the host. Approval pins a specific commit and content digest, so the latest revision may still need review.
 - It starts disabled; you choose the modes it is enabled in.
 - Being in this repository does not install or enable a Skill in the app.
 
@@ -89,7 +91,7 @@ Open the **Skills** panel from the sidebar, switch to **External marketplace**, 
 | `general-learning` | General learning, worked examples and feedback on mistakes, question banks and papers from documents, adapted to the existing answer cards | Work |
 | `jupyter-notebook` | Creating and editing experiment or tutorial notebooks: checks structure, keeps attachments and reports what actually ran | Work, Code |
 | `knowledge-workspace` | Reading and writing a bound Obsidian vault: areas, section reads by heading and write checks | Work |
-| `plugin-development` | Writing or debugging Firefly runtime plugins: manifest, tool registration, panels, packaging and acceptance | Work, Code |
+| `plugin-development` | Developing or migrating Firefly 1.2.0 plugins: SDK, permissions, .ffplugin packages and verification | Work, Code |
 
 ## Write a Skill
 

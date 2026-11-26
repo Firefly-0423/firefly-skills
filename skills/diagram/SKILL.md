@@ -1,7 +1,7 @@
 ---
 name: diagram
 description: 何时手写 SVG 学习卡片而非 Mermaid、卡片的 Firefly 绿色配色与排版尺寸，以及渲染端的消毒与熔断规则。
-version: 1.0.0
+version: 1.0.1
 modes:
   - work
   - code
@@ -20,7 +20,7 @@ modes:
 
 ## 颜色与字体
 
-照抄下表，不另选颜色。
+下表是浅底 SVG 的示例配色。按内容选择配色，检查正文、注释和背景的对比度。
 
 | 角色 | 色值 | 对应字段 |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ modes:
 | 连线 | `#456858` | `line` |
 | 分隔与描边 | `#F2F2F2` | `border` |
 
-- 字段名取自渲染端 Mermaid 图的主题常量（`MermaidBlock.tsx` 中的 `FIREFLY_THEME`），因此卡片与 Mermaid 图同色。
+- Firefly 1.2.0 的 Mermaid 使用应用主题颜色；手写 SVG 中指定的颜色会原样保留。
 - 颜色直接写在 SVG 里，不跟随应用的明暗主题。需要区分层级时只用面板色和强调色。
 - 不引用外部字体、图片或链接。
 
