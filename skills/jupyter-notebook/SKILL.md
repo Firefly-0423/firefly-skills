@@ -1,7 +1,7 @@
 ---
 name: jupyter-notebook
 description: 用户要求创建、编辑或整理 Jupyter Notebook（.ipynb），用于实验探索、数据分析或教学演示时使用。只需普通脚本、论文解读或一般概念问答且不需要 Notebook 产物时，不启用本技能。
-version: 0.1.0
+version: 0.1.1
 modes:
   - work
   - code
@@ -22,7 +22,7 @@ effectKind: mutation
 
 明确请求就直接推进，只补问会改变内容、输出位置或执行范围的缺口。基础概念可以直接解释；论文证据与完整科研设计可按当前可用技能协作，不依赖其他技能一定已安装。
 
-参考通过宿主 `read_skill_reference` 读取，ref 只填文件名，不带 references/。只读相关资料，不一次遍历所有附件。
+参考通过宿主 `read_skill_reference` 读取，ref 使用工具清单中的文件名。只读相关资料，不一次遍历所有附件。
 
 ## 生成与编辑
 
